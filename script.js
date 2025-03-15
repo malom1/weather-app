@@ -7,20 +7,23 @@ const feels = document.getElementById('feels');
 const high = document.getElementById('high');
 const low = document.getElementById('low');
 
-async function getWeather() {
-    try {
-        const cityName = encodeURIComponent(searchInput.value.trim());
-        if(!cityName){
-            alert('Enter a valid city');
-            return;
-        }
+async function getWeather(event) {
+    event.preventDefault();
 
-        const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/dallas?unitGroup=us&key=GAHNYCAZB93X4SBGAX38Q495V&contentType=json`;
+    const cityName = encodeURIComponent(searchInput.value.trim());
+    if(!cityName){
+        alert('Enter a city');
+        return;
+    }
+
+    try{
+        const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${cityName}?unitGroup=us&key=GAHNYCAZB93X4SBGAX38Q495V&contentType=json`;
         console.log('fetching url: ', url);
 
-        const response = await fetch(url, {mode: 'cors'})
+        const response = await fetch(url, {mode: 'cors'});
+        
         if (!response.ok){
-            throw new Error(`HTTP Error! Status: ${reponse.status}`)
+            throw new Error(`HTTP Error! Status: ${response.status}`)
         }
         const data = await response.json();
     
@@ -28,8 +31,10 @@ async function getWeather() {
         temp.innerText = `Temperature: ${data.days[0].temp}`;
         feels.innerText = `Feels Like: ${data.days[0].feelslike}`; 
         high.innerText = `High: ${data.days[0].tempmax}`;
-        low.innerText = `Low: ${data.days[0].tempmin}`;
-        
+        low.innerText = `Low: ${data.days[0].tempmin}`;   
+
+        console.log(temp.innerText);
+
     } catch (error) {
         alert("Error: " + error);
         

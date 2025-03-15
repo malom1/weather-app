@@ -8,21 +8,35 @@
     
 </head>
 <body>
-
-    <h1>Wouldn't you like to know, weatherboy?</h1>
-
-    <form action="">
-        <label for="city">
-            <p>Enter a city: </p>
-            <input type="text" id="city">
-        </label>
-        <button>Submit</button>
-    </form>
-    <div id="city"></div>
-    <div id="temp"></div>
-    <div id="feels"></div>
-    <div id="high"></div>
-    <div id="low"></div>
+    <div class="main-container">
+        <header>
+            <div class="left-header">
+                <div class="logo">Mo's Forecast</div>
+            </div>
+            <div class="right-header">
+                <form action="">
+                    <label for="city">
+                        <p>Enter a city: </p>
+                        <input type="text" id="city">
+                    </label>
+                    <button>Submit</button>
+                </form>
+                <!-- <button>F or C</button> -->
+            </div>
+        </header>
+    
+        <h1>Wouldn't you like to know, weatherboy?</h1>
+    
+        <div class="weather-card">
+            <div id="city">City: </div>
+            <div class="card">
+                <div id="temp">Temperature: </div>
+                <div id="feels">Feels Like: </div>
+                <div id="high">High: </div>
+                <div id="low"> Low: </div>
+            </div>
+        </div>
+    </div>
     
 </body>
 <script src="script.js"></script>
