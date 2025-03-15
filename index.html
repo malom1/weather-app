@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     
 </head>
 <body>
@@ -13,17 +12,18 @@
     <h1>Wouldn't you like to know, weatherboy?</h1>
 
     <form action="">
-        <label for="weather">
+        <label for="city">
             <p>Enter a city: </p>
-            <input type="text" id="weather">
+            <input type="text" id="city">
         </label>
         <button>Submit</button>
     </form>
-    <div class="city"></div>
-    <div class="temp"></div>
-    <div class="feels"></div>
-    <div class="high"></div>
-    <div class="low"></div>
+    <div id="city"></div>
+    <div id="temp"></div>
+    <div id="feels"></div>
+    <div id="high"></div>
+    <div id="low"></div>
     
 </body>
+<script src="script.js"></script>
 </html>
