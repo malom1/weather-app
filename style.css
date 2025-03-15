@@ -1,4 +1,3 @@
-/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 * {
@@ -18,7 +17,7 @@ body {
     padding: 20px;
 }
 
-/* Header */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -63,17 +62,18 @@ button:hover {
     background: #ff6a00;
 }
 
-/* Main Weather Display */
+
 .main-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 1200px;
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
-/* Weather Information */
+
 .weather-card {
     display: flex;
     justify-content: space-between;
@@ -87,7 +87,6 @@ button:hover {
     max-width: 800px;
 }
 
-/* Left Side (City & Temperature) */
 .weather-main {
     flex: 2;
     text-align: left;
@@ -104,15 +103,14 @@ button:hover {
     margin-top: 10px;
 }
 
-/* Right Side (Additional Details) */
 .weather-details {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 8px;
+    gap: 15px;
 }
 
 .weather-details div {
-    font-size: 18px;
+    font-size: 25px;
 }
