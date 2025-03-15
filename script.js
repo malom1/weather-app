@@ -27,11 +27,11 @@ async function getWeather(event) {
         }
         const data = await response.json();
     
-        city.innerText = `City: ${data.resolvedAddress}`; 
-        temp.innerText = `Temperature: ${data.days[0].temp}`;
-        feels.innerText = `Feels Like: ${data.days[0].feelslike}`; 
-        high.innerText = `High: ${data.days[0].tempmax}`;
-        low.innerText = `Low: ${data.days[0].tempmin}`;   
+        city.innerText = `${data.resolvedAddress}`; 
+        temp.innerText = `${data.days[0].temp}°F`;
+        feels.innerText = `Feels Like: ${data.days[0].feelslike}°F`; 
+        high.innerText = `High: ${data.days[0].tempmax}°F`;
+        low.innerText = `Low: ${data.days[0].tempmin}°F`;   
 
         console.log(temp.innerText);
 

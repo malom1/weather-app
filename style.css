@@ -1,44 +1,118 @@
-*{
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
     margin: 0;
     padding: 0;
-    font-family: monospace;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.main-container{
-    display: grid;
-    /* width: 100vw;
-    height: 100vh; */
-    grid-template-rows: 1fr 1fr 3fr;
-    justify-content: center;
-    align-items: center;
-}
-
-header{
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    border: 1px solid;
-}
-
-.right-header{
+body {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
     display: flex;
-    justify-content: space-evenly;
-}
-
-.logo{
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-h1{
-    display: flex;
-    justify-content: center;
-    border: 1px solid;
-}
-
-.weather-card{
-    display: grid;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    border: 1px solid;
+    height: 100vh;
+    padding: 20px;
 }
 
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Search Bar */
+form {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    width: 250px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background: #ff8c00;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #ff6a00;
+}
+
+/* Main Weather Display */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+}
+
+/* Weather Information */
+.weather-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Left Side (City & Temperature) */
+.weather-main {
+    flex: 2;
+    text-align: left;
+}
+
+#city {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+#temp {
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* Right Side (Additional Details) */
+.weather-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.weather-details div {
+    font-size: 18px;
+}
