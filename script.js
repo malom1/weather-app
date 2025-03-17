@@ -10,7 +10,7 @@ const icons = document.getElementById('icons');
 
 async function getWeather(event) {
     
-    //Prevents early refresh before data is fetched from API
+    //Prevents automatic refresh
     event.preventDefault();
 
     const cityName = encodeURIComponent(searchInput.value.trim());
@@ -30,19 +30,21 @@ async function getWeather(event) {
         }
         const data = await response.json();
 
+        //Gather API data and round out the temperatures
         const roundedTemp = Math.round(data.days[0].temp);
         const roundedFeels = Math.round(data.days[0].feelslike);
         const roundedHigh = Math.round(data.days[0].tempmax);
         const roundedLow = Math.round(data.days[0].tempmin);
         const weatherIcon = data.days[0].icon;
     
-    
+        //Changes to the DOM based on API data
         city.innerText = `${data.resolvedAddress}`; 
         temp.innerText = `${roundedTemp} °F`;
         feels.innerText = `Feels Like: ${roundedFeels} °F`; 
         high.innerText = `High: ${roundedHigh} °F`;
         low.innerText = `Low: ${roundedLow} °F`;  
 
+        //Change icon based on weather conditions
         let iconName = getIcon(weatherIcon);
         icons.textContent = iconName;
 
