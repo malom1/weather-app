@@ -98,6 +98,8 @@ button:hover {
 }
 
 #temp {
+    display: flex;
+    justify-content:flex-start;
     font-size: 48px;
     font-weight: 700;
     margin-top: 10px;
@@ -113,4 +115,9 @@ button:hover {
 
 .weather-details div {
     font-size: 25px;
+}
+
+.material-icons{
+    margin-left: 20px;
+    margin-top: 20px;
 }

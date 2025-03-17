@@ -6,8 +6,11 @@ const temp = document.getElementById('temp');
 const feels = document.getElementById('feels');
 const high = document.getElementById('high');
 const low = document.getElementById('low');
+const icons = document.getElementById('icons');
 
 async function getWeather(event) {
+    
+    //Prevents early refresh before data is fetched from API
     event.preventDefault();
 
     const cityName = encodeURIComponent(searchInput.value.trim());
@@ -31,6 +34,8 @@ async function getWeather(event) {
         const roundedFeels = Math.round(data.days[0].feelslike);
         const roundedHigh = Math.round(data.days[0].tempmax);
         const roundedLow = Math.round(data.days[0].tempmin);
+        const weatherIcon = data.days[0].icon;
+    
     
         city.innerText = `${data.resolvedAddress}`; 
         temp.innerText = `${roundedTemp} °F`;
@@ -38,31 +43,29 @@ async function getWeather(event) {
         high.innerText = `High: ${roundedHigh} °F`;
         low.innerText = `Low: ${roundedLow} °F`;  
 
-        const weatherIcon = data.days[0].icon;
-        const iconMap = {
-            "clear-day": "wb_sunny",
-            "clear-night": "nights_stay",
-            "cloudy": "cloud",
-            "fog": "foggy",
-            "partly-cloudy-day": "partly_cloudy_day",
-            "partly-cloudy-night": "partly_cloudy_night",
-            "rain": "umbrella",
-            "snow": "ac_unit",
-            "wind": "air"
-        }
-
-        let icons = document.createElement("i");
-        icons.className = "material-icons";
-        let iconName = iconMap[weatherIcon];
+        let iconName = getIcon(weatherIcon);
         icons.textContent = iconName;
-        temp.appendChild(icons);
-        
 
     } catch (error) {
         alert(error);
         
     }
 
+}
+
+function getIcon(weatherIcon) {
+    const iconMap = {
+        "clear-day": "wb_sunny",
+        "clear-night": "nights_stay",
+        "cloudy": "cloud",
+        "fog": "foggy",
+        "partly-cloudy-day": "partly_cloudy_day",
+        "partly-cloudy-night": "partly_cloudy_night",
+        "rain": "umbrella",
+        "snow": "ac_unit",
+        "wind": "air"
+    }
+    return iconMap[weatherIcon];
 }
 
 button.addEventListener("click", getWeather);
