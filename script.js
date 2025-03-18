@@ -49,6 +49,7 @@ async function getWeather(event) {
         //Change icon based on weather conditions
         let iconName = getIcon(weatherIcon);
         icons.textContent = iconName;
+        console.log(icons.textContent);
 
     } catch (error) {
         alert(error);
