@@ -1,6 +1,7 @@
 const searchInput = document.querySelector('input');
 const button = document.querySelector('button');
 
+const description = document.getElementById('description');
 const city = document.getElementById('city');
 const temp = document.getElementById('temp');
 const feels = document.getElementById('feels');
@@ -38,6 +39,7 @@ async function getWeather(event) {
         const weatherIcon = data.days[0].icon;
     
         //Changes to the DOM based on API data
+        description.textContent = `${data.description}`;
         city.innerText = `${data.resolvedAddress}`; 
         temp.innerText = `${roundedTemp} °F`;
         feels.innerText = `Feels Like: ${roundedFeels} °F`; 

@@ -51,7 +51,7 @@ button {
     padding: 10px 15px;
     border: none;
     border-radius: 20px;
-    background: #ff8c00;
+    background: hwb(33 14% 26%);
     color: white;
     cursor: pointer;
     font-size: 16px;
@@ -59,7 +59,7 @@ button {
 }
 
 button:hover {
-    background: #ff6a00;
+    background: hwb(33 3% 11%);
 }
 
 
@@ -85,6 +85,20 @@ button:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 800px;
+}
+
+.description-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 50px;
 }
 
 .weather-main {
@@ -120,4 +134,6 @@ button:hover {
 .material-icons{
     margin-left: 20px;
     margin-top: 20px;
+    font-size: 50px;
 }
+
